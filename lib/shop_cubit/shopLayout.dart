@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'package:iconly/iconly.dart';
 
 import '../Search.dart';
 import 'Shop_Cubit.dart';
@@ -26,15 +27,15 @@ class ShopLayout extends StatelessWidget {
                         builder: (context) => const SearchScreen(),
                       ));
                 },
-                icon: const Icon(Icons.search))
+                icon: const Icon(IconlyBroken.search))
           ],
         ),
         body: cubit.screens[cubit.currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'الرئيسيه'),
+            BottomNavigationBarItem(icon: Icon(IconlyBroken.home), label: 'الرئيسيه'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_outline), label: 'المفضل')],
+                icon: Icon(IconlyBroken.heart), label: 'المفضل')],
           currentIndex: cubit.currentIndex,
           onTap: ((index) {
             cubit.changeNavBar(index);

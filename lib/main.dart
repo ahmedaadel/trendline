@@ -45,11 +45,13 @@ class MyApp extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             return MaterialApp(
+
               locale: const Locale('ar', 'AR'),
-              supportedLocales: const [ Locale('ar', 'AR')],
+              supportedLocales: const [ Locale('ar', 'AR') , Locale('en', 'US')],
               localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate
               ],
               theme: lightTheme,
               debugShowCheckedModeBanner: false,

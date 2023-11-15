@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:trendline/modules/Inner_Clothes.dart';
+import 'package:trendline/modules/Outer_Clothes.dart';
 
+import '../models/Clothes_Model.dart';
 import '../shared/components/constants.dart';
 
 class CatalogScreen extends StatefulWidget {
@@ -11,13 +14,20 @@ class CatalogScreen extends StatefulWidget {
 
 class _CatalogScreenState extends State<CatalogScreen> {
   // variable to toggle between the buttons if 1 the first button will change his color , so on
-  int  pressedButton = 0;
-
+  int  pressedButton = 1;
+  final List<Clothes> clothes = [
+    Clothes('Shirt 1', 'Description for Shirt 1', 29.99 , Image.asset('assets/images/clothes1.jpg') ),
+    Clothes('Shirt 2', 'Description for Shirt 2', 39.99,Image.asset('assets/images/clothes2.jpg') ),
+    Clothes('Shirt 3', 'Description for Shirt 3', 49.99,Image.asset('assets/images/clothes3.jpg') ),
+    Clothes('Shirt 4', 'Description for Shirt 4', 55.99,Image.asset('assets/images/clothes4.jpg') ),
+    // Add more shirts as needed
+  ];
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
+    final List<Widget> pages = [OuterClothes() , const InnerClothes()] ;
 
     return Scaffold(
       body: Padding(
@@ -133,7 +143,51 @@ class _CatalogScreenState extends State<CatalogScreen> {
 
                   ],
                 ),
+              ),
+              const SizedBox(height: 10),
+              Container(
+                height: 600,
+                child :GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+                crossAxisSpacing: 8.0,
+                mainAxisSpacing: 8.0,
+              ),
+          itemCount: clothes.length,
+          itemBuilder: (context, index) {
+            return InkWell(
+              onTap: () {
+                /*Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context)=> ,
+              ),
+            );*/
+              },
+              child: Card(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Image(image: AssetImage("")),
+                    ),
+                    Expanded(
+                      flex: 1,
+                        child: Text(clothes[index].name)),
+                    const SizedBox(height: 8.0),
+                    Expanded(
+                      flex: 1,
+                        child: Text('السعر: \$${clothes[index].price.toStringAsFixed(2)}')),
+
+                  ],
+                ),
+              ),
+            );
+          },
+        ) ,
               )
+
             ],
           ),
         ),

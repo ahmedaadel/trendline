@@ -5,7 +5,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 ThemeData lightTheme = ThemeData(
   floatingActionButtonTheme:
-      const FloatingActionButtonThemeData(backgroundColor: Colors.amber ),
+      const FloatingActionButtonThemeData(backgroundColor: Colors.blueGrey ),
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
       iconTheme: IconThemeData(color: Colors.black),
