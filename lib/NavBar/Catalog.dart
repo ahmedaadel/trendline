@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trendline/modules/Inner_Clothes.dart';
 import 'package:trendline/modules/Outer_Clothes.dart';
+import 'package:trendline/modules/viewproduct_screen.dart';
 
 import '../models/Clothes_Model.dart';
 import '../shared/components/constants.dart';
@@ -162,6 +163,11 @@ class _CatalogScreenState extends State<CatalogScreen> {
                         itemBuilder: (context, index) {
                           return InkWell(
                 onTap: () {
+                   Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ViewProductScreen(product: clothes[index])));
+     
+                         // Navigator.pushNamed(context, ViewScreen.id);
+
                   /*Navigator.push(
                 context,
                 MaterialPageRoute(
