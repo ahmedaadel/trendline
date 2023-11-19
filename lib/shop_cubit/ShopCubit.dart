@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:trendline/shop_cubit/shop_States.dart';
+import 'package:trendline/shop_cubit/ShopStates.dart';
 import '../NavBar/Catalog.dart';
 import '../NavBar/Favourite.dart';
 

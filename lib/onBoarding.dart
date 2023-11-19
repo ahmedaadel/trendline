@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:trendline/shared/network/Local/cache.dart';
-import 'package:trendline/shop_cubit/shopLayout.dart';
+import 'package:trendline/shop_cubit/ShopLayout.dart';
 
 class BoardingModel {
   final String img;

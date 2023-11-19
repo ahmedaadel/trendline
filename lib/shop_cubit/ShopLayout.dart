@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 import '../Search.dart';
-import 'Shop_Cubit.dart';
+import 'ShopCubit.dart';
 
 class ShopLayout extends StatelessWidget {
   const ShopLayout({super.key});
@@ -17,7 +17,7 @@ class ShopLayout extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
-          title: IconButton(onPressed: () {  },icon:Icon(Icons.menu)),
+          title: IconButton(onPressed: () {  },icon:const Icon(IconlyBroken.more_circle)),
           actions: [
             IconButton(
                 onPressed: () {

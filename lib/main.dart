@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:trendline/shared/components/constants.dart';
 import 'package:trendline/shared/network/Local/cache.dart';
-import 'package:trendline/shop_cubit/Shop_Cubit.dart';
-import 'package:trendline/shop_cubit/shopLayout.dart';
-import 'package:trendline/shop_cubit/shop_States.dart';
+import 'package:trendline/shop_cubit/ShopCubit.dart';
+import 'package:trendline/shop_cubit/ShopLayout.dart';
+import 'package:trendline/shop_cubit/ShopStates.dart';
 import 'package:trendline/styles/Theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

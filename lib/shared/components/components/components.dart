@@ -4,7 +4,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:trendline/shared/components/constants.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-
 void showToast({required String text, required ToastState state}) {
   Fluttertoast.showToast(
       msg: text,
@@ -86,25 +85,17 @@ Widget searchForm({
           suffixIcon: suffixIcon),
     );
 
-
-
-Text DefaultText({
-  String text="",
-  Color color=Colors.black,
-  String  font="ReemKufi",
-  double ? font_size
-
-}){
-
-  return Text(
-    text,
-    style:TextStyle(
-    color: color,
-    fontFamily: font,
-    fontSize: font_size,
-
-
-  ));
+Text DefaultText(
+    {String text = "",
+    Color color = Colors.black,
+    String font = "ReemKufi",
+    double? font_size}) {
+  return Text(text,
+      style: TextStyle(
+        color: color,
+        fontFamily: font,
+        fontSize: font_size,
+      ));
 }
 
 Widget DefaultButton({
@@ -116,48 +107,43 @@ Widget DefaultButton({
   required String text,
   required Color font_color,
   required double font_size,
-  String ? font=" ",
-  required VoidCallback  onPressed,
-  
-
-
-
-
-
-}){
-return  Container(
-   width: getAPPWidth(context, width),
-  height:getAppheight(context, height) ,
-child: MaterialButton(
-   splashColor: Color(0xff353535),
-    //database insert add tawsya logic
-    onPressed: onPressed,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)
-                          
-        ),
-                            
+  String? font = " ",
+  required VoidCallback onPressed,
+}) {
+  return Container(
+    width: getAPPWidth(context, width),
+    height: getAppheight(context, height),
+    child: MaterialButton(
+        splashColor: Color(0xff353535),
+        //database insert add tawsya logic
+        onPressed: onPressed,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
         color: color,
-          child:Center(
-            child: DefaultText(
-                text: text,color:font_color,font:font ?? "" ,font_size: font_size
-                  ),
-                  )),
-             );
+        child: Center(
+          child: DefaultText(
+              text: text,
+              color: font_color,
+              font: font ?? "",
+              font_size: font_size),
+        )),
+  );
 }
 
-
-
-
-AppBar DefAppBar(context){
+AppBar DefAppBar(context) {
   return AppBar(
     centerTitle: true,
-    title:  Text(
+    title: Text(
       ' AlliaNz ',
-      style: TextStyle(fontSize: getAppSize(context, 22),fontFamily: "ReemKufi",letterSpacing: 1),
+      style: TextStyle(
+          fontSize: getAppSize(context, 22),
+          fontFamily: "ReemKufi",
+          letterSpacing: 1),
     ),
     actions: [
       IconButton(
-          onPressed: () {}, icon:  Icon(IconlyBroken.notification, size: getAppSize(context, 24)))
+          onPressed: () {},
+          icon: Icon(IconlyBroken.notification, size: getAppSize(context, 24)))
     ],
     leading: IconButton(
         icon: const Icon(
@@ -168,47 +154,38 @@ AppBar DefAppBar(context){
   );
 }
 
-
 Widget DefaultTextForm({
   bool secure = false,
   required Function validationFun,
   required TextEditingController controller,
   required String labelText,
   required double fontsize,
-
   Function? onChange,
   Icon? prefixIcon,
   IconButton? suffixIcon,
   TextInputType? keyboardType,
 }) =>
     TextFormField(
-
       textAlignVertical: TextAlignVertical.bottom,
-
       controller: controller,
       validator: (value) => validationFun(value),
       keyboardType: keyboardType,
       onChanged: (value) => onChange,
       obscureText: secure,
       decoration: InputDecoration(
-        alignLabelWithHint: true,
+          alignLabelWithHint: true,
           enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Color(0x33000000),
-              )
-          ),
-
+            color: Color(0x33000000),
+          )),
           labelText: labelText,
           labelStyle: TextStyle(
-            fontSize:fontsize,
+            fontSize: fontsize,
             color: Color(0x66000000),
-
           ),
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon),
     );
-
-
 
 Widget DefaultTextFormWithIcons({
   bool secure = false,
@@ -216,34 +193,26 @@ Widget DefaultTextFormWithIcons({
   required TextEditingController controller,
   required String labelText,
   required double fontsize,
-
   Function? onChange,
   Icon? prefixIcon,
   IconButton? suffixIcon,
   TextInputType? keyboardType,
 }) =>
     TextFormField(
-
-
-
       controller: controller,
       validator: (value) => validationFun(value),
       keyboardType: keyboardType,
       onChanged: (value) => onChange,
       obscureText: secure,
       decoration: InputDecoration(
-
           enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Color(0x33000000),
-              )
-          ),
-
+            color: Color(0x33000000),
+          )),
           labelText: labelText,
           labelStyle: TextStyle(
-            fontSize:fontsize,
+            fontSize: fontsize,
             color: Color(0x66000000),
-
           ),
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon),
