@@ -22,23 +22,24 @@ class _CatalogScreenState extends State<CatalogScreen> {
     List<ProductSize> size = [ProductSize.s, ProductSize.m ,ProductSize.xl];
     List<ProductSize> size2 = [ProductSize.s, ProductSize.xxl ,ProductSize.xl];
     List<Color> colors = [ Colors.red ,Colors.amber , Colors.blue , Colors.white , Colors.green , Colors.purple , Colors.yellow , Colors.black38];
-    final List<Product> products = [
+    final List<Product> products =
+    [
       Product('فستان صوف', 'فستان خامه صوف ', 29.99,
-          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes,size,colors ),
+          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes,size,colors,1 ),
       Product('تيشرت بولو', 'فستان خامه صوف', 39.99,
-          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size,colors),
+          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size,colors,2),
       Product('تيشرت بولو', 'تيشرت بولو', 49.99,
-          const AssetImage('assets/images/clothes3.jpg'), ProductsType.clothes , size,colors),
+          const AssetImage('assets/images/clothes3.jpg'), ProductsType.clothes , size,colors,3),
       Product('تيشرت بولو', 'فستان خامه صوف', 55.99,
-          const AssetImage('assets/images/clothes4.jpg'), ProductsType.clothes , size2,colors),
+          const AssetImage('assets/images/clothes4.jpg'), ProductsType.clothes , size2,colors,4),
       Product('تيشرت بولو', 'تيشرت بولو', 29.99,
-          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size2,colors),
+          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size2,colors,5),
       Product('تيشرت بولو', 'فستان خامه صوف', 39.99,
-          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size2,colors),
+          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size2,colors,6),
       Product('فستان صوف', 'فستان خامه صوف', 49.99,
-          const AssetImage('assets/images/clothes3.jpg'), ProductsType.clothes, size2,colors),
+          const AssetImage('assets/images/clothes3.jpg'), ProductsType.clothes, size2,colors,7),
       Product('فستان صوف', 'فستان خامه صوف', 55.99,
-          const AssetImage('assets/images/clothes4.jpg'), ProductsType.clothes, size2,colors),
+          const AssetImage('assets/images/clothes4.jpg'), ProductsType.clothes, size2,colors,8),
       // Add more shirts as needed
     ];
 

@@ -7,18 +7,25 @@ import 'Components/SizeOfProduct.dart';
 import 'Components/description.dart';
 import 'components/AvailableColors.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends StatefulWidget {
   const DetailsScreen({super.key, required this.product});
 
   final Product product;
 
+  @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(icon: const Icon(IconlyBroken.heart), onPressed: () {}),
+        leading: IconButton(icon: const Icon(IconlyBroken.heart), onPressed: () {
+
+        }),
         centerTitle: true,
         title:const Text( "تريندلاين" , style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -40,7 +47,7 @@ class DetailsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              ProductImage(product: product),
+              ProductImage(product: widget.product),
               const SizedBox(height: 10,),
               Container(
                   padding: const EdgeInsets.all(20),
@@ -54,13 +61,13 @@ class DetailsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text("السعر : ${product.price}" , style: defaultTextStyle(),) ,
+                      Text("السعر : ${widget.product.price}" , style: defaultTextStyle(),) ,
                       const SizedBox(height: 8,),
-                      SizeOfProduct(product: product,),
+                      SizeOfProduct(product: widget.product,),
                       const SizedBox(height: 8,),
-                      AvailableColors(product: product,),
+                      AvailableColors(product: widget.product,),
                       const SizedBox(height: 8,),
-                      Description(product: product,),
+                      Description(product: widget.product,),
                     ],
                   )),
             ],

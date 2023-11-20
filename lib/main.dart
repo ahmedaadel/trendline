@@ -8,6 +8,7 @@ import 'package:trendline/shop_cubit/ShopStates.dart';
 import 'package:trendline/styles/Theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'models/ProductModel.dart';
 import 'onBoarding.dart';
 
 Future<void> main() async {
@@ -30,9 +31,8 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   final Widget currentScreen;
-  const MyApp(this.currentScreen, {super.key});
+   const MyApp(this.currentScreen, {super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -45,9 +45,8 @@ class MyApp extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             return MaterialApp(
-
               locale: const Locale('ar', 'AR'),
-              supportedLocales: const [ Locale('ar', 'AR') , Locale('en', 'US')],
+              supportedLocales: const [Locale('ar', 'AR'), Locale('en', 'US')],
               localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
@@ -61,6 +60,3 @@ class MyApp extends StatelessWidget {
         ));
   }
 }
-
-
-

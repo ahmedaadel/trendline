@@ -12,6 +12,8 @@ enum ProductsType {
 enum ProductSize { s, m, l, xl, xxl, xxxl }
 
 class Product {
+  late int id ;
+
   late String name;
 
   late String description;
@@ -44,10 +46,10 @@ class Product {
   }
 
   Product(this.name, this.description, this.price, this.image,
-      this.productsType, this.sizes, this.colors);
+      this.productsType, this.sizes, this.colors , this.id);
 
   @override
   String toString() {
-    return 'Product{name: $name, description: $description, price: $price, image: $image, productsType: $productsType, sizes: $sizes, colors: $colors}';
+    return 'Product{name: $name, description: $description, price: $price, image: $image, productsType: $productsType, sizes: $sizes, colors: $colors , id: $id}';
   }
 }
