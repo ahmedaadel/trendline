@@ -17,13 +17,22 @@ Color pressedTextColor = Colors.white;
 
 TextStyle catalogCardsTextStyle (int globalIntBetweenAllButtons,int choice)
 {
-     TextStyle mainTextStyle = TextStyle(
+  return TextStyle(
     color:  globalIntBetweenAllButtons == choice ? pressedTextColor : textColor,
     fontSize: 20.0,
     fontWeight: FontWeight.w500,
        fontFamily: "Cairo"
   );
-     return mainTextStyle ;
+}
+
+TextStyle defaultTextStyle ()
+{
+  return const  TextStyle(
+    color: Colors.black ,
+    fontFamily: "Cairo" ,
+    fontSize: 18 ,
+    fontWeight: FontWeight.w600
+  );
 }
 
 getAPPWidth(context,figma_width){
@@ -42,41 +51,38 @@ return (myApp*ratio);
 Widget catalogCards(Product product , context )
 {
   return InkWell(
-
     onTap: (){
       Navigator.push(
         context,
         MaterialPageRoute(
             builder: (context) => DetailsScreen(
                 product: product)));},
-    child: Container(
-      child: Card(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Image(image: product.image,
-              fit: BoxFit.fitWidth,),
-            ),
-            const SizedBox(height: 10.0),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(product.name ,style: const TextStyle(
-                    fontFamily: "Cairo",
-                    fontWeight: FontWeight.w500,
+    child: Card(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Image(image: product.image,
+            fit: BoxFit.fitWidth,),
+          ),
+          const SizedBox(height: 10.0),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(product.name ,style: const TextStyle(
+                  fontFamily: "Cairo",
+                  fontWeight: FontWeight.w500,
 
 
-                ), ),
-                Text(product.price.toString(),style: const TextStyle(
-                    fontFamily: "Cairo",
-                    fontWeight: FontWeight.w900
-                ),  ),
-              ],
-            ),
+              ), ),
+              Text(product.price.toString(),style: const TextStyle(
+                  fontFamily: "Cairo",
+                  fontWeight: FontWeight.w900
+              ),  ),
+            ],
+          ),
 
-          ],
-        ),
+        ],
       ),
     ),
   );

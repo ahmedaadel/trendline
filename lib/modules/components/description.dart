@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/ProductModel.dart';
+import '../../shared/components/constants.dart';
 
 class Description extends StatelessWidget {
   const Description({super.key, required this.product});
@@ -10,9 +11,8 @@ class Description extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Text(
-        product.description,
-        style: TextStyle(height: 1.5),
+      child: Text(" الوصف : ${product.description}",
+        style:defaultTextStyle(),
       ),
     );
   }

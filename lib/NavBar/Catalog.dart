@@ -21,26 +21,26 @@ class _CatalogScreenState extends State<CatalogScreen> {
 
     List<ProductSize> size = [ProductSize.s, ProductSize.m ,ProductSize.xl];
     List<ProductSize> size2 = [ProductSize.s, ProductSize.xxl ,ProductSize.xl];
+    List<Color> colors = [ Colors.red ,Colors.amber , Colors.blue , Colors.white , Colors.green , Colors.purple , Colors.yellow , Colors.black38];
     final List<Product> products = [
-      Product('فستان صوف', 'Description for Shirt 1', 29.99,
-          AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes,size ),
-      Product('تيشرت بولو', 'Description for Shirt 2', 39.99,
-          AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size),
-      Product('تيشرت بولو', 'Description for Shirt 3', 49.99,
-          AssetImage('assets/images/clothes3.jpg'), ProductsType.clothes , size),
-      Product('تيشرت بولو', 'Description for Shirt 4', 55.99,
-          AssetImage('assets/images/clothes4.jpg'), ProductsType.clothes , size2),
-      Product('تيشرت بولو', 'Description for Shirt 1', 29.99,
-          AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size2),
-      Product('تيشرت بولو', 'Description for Shirt 2', 39.99,
-          AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size2),
-      Product('فستان صوف', 'Description for Shirt 3', 49.99,
-          AssetImage('assets/images/clothes3.jpg'), ProductsType.clothes, size2),
-      Product('فستان صوف', 'Description for Shirt 4', 55.99,
-          AssetImage('assets/images/clothes4.jpg'), ProductsType.clothes, size2),
+      Product('فستان صوف', 'فستان خامه صوف ', 29.99,
+          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes,size,colors ),
+      Product('تيشرت بولو', 'فستان خامه صوف', 39.99,
+          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size,colors),
+      Product('تيشرت بولو', 'تيشرت بولو', 49.99,
+          const AssetImage('assets/images/clothes3.jpg'), ProductsType.clothes , size,colors),
+      Product('تيشرت بولو', 'فستان خامه صوف', 55.99,
+          const AssetImage('assets/images/clothes4.jpg'), ProductsType.clothes , size2,colors),
+      Product('تيشرت بولو', 'تيشرت بولو', 29.99,
+          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size2,colors),
+      Product('تيشرت بولو', 'فستان خامه صوف', 39.99,
+          const AssetImage('assets/images/clothes2.jpg'), ProductsType.clothes , size2,colors),
+      Product('فستان صوف', 'فستان خامه صوف', 49.99,
+          const AssetImage('assets/images/clothes3.jpg'), ProductsType.clothes, size2,colors),
+      Product('فستان صوف', 'فستان خامه صوف', 55.99,
+          const AssetImage('assets/images/clothes4.jpg'), ProductsType.clothes, size2,colors),
       // Add more shirts as needed
     ];
-
 
     return Scaffold(
       body: Padding(
@@ -56,12 +56,13 @@ class _CatalogScreenState extends State<CatalogScreen> {
                   Text(
                     "استكشف منتجاتنا",
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Cairo"),
                   ),
                 ],
               ),
+
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -172,7 +173,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-              Expanded(
+              Expanded (
                 child:GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -182,8 +183,8 @@ class _CatalogScreenState extends State<CatalogScreen> {
                   ),
                   itemCount: products.length,
                   itemBuilder: (context, index) {
-                    return catalogCards(
-                        products[index], context);
+                    return catalogCards
+                      (products[index], context);
                   },
                 )
               )

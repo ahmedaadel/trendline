@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 import '../Search.dart';
+import '../shared/components/constants.dart';
 import 'ShopCubit.dart';
 
 class ShopLayout extends StatelessWidget {
@@ -17,7 +18,13 @@ class ShopLayout extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
-          title: IconButton(onPressed: () {  },icon:const Icon(IconlyBroken.more_circle)),
+          leading: IconButton(onPressed: () {  },icon:const Icon(IconlyBroken.more_circle)),
+          centerTitle: true,
+          title:const Text( "تريندلاين" , style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            fontFamily: "Cairo"
+          ),),
           actions: [
             IconButton(
                 onPressed: () {

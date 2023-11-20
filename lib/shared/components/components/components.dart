@@ -33,17 +33,6 @@ Color toastColor(ToastState state) {
   return color;
 }
 
-// void signOut({required BuildContext context}) {
-//   Cache_Helper.removeData(key: 'token').then((value) {
-//     if (value == true) {
-//       Navigator.pushAndRemoveUntil(
-//           context,
-//           MaterialPageRoute(builder: (context) => LoginScreen()),
-//           (route) => false);
-//     }
-//   });
-// }
-
 Widget textForm({
   bool secure = false,
   required Function validationFun,
@@ -114,7 +103,7 @@ Widget DefaultButton({
     width: getAPPWidth(context, width),
     height: getAppheight(context, height),
     child: MaterialButton(
-        splashColor: Color(0xff353535),
+        splashColor: const  Color(0xff353535),
         //database insert add tawsya logic
         onPressed: onPressed,
         shape:
@@ -127,30 +116,6 @@ Widget DefaultButton({
               font: font ?? "",
               font_size: font_size),
         )),
-  );
-}
-
-AppBar DefAppBar(context) {
-  return AppBar(
-    centerTitle: true,
-    title: Text(
-      ' AlliaNz ',
-      style: TextStyle(
-          fontSize: getAppSize(context, 22),
-          fontFamily: "ReemKufi",
-          letterSpacing: 1),
-    ),
-    actions: [
-      IconButton(
-          onPressed: () {},
-          icon: Icon(IconlyBroken.notification, size: getAppSize(context, 24)))
-    ],
-    leading: IconButton(
-        icon: const Icon(
-          Icons.menu,
-          size: 30,
-        ),
-        onPressed: () {}),
   );
 }
 
