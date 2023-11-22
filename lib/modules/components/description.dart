@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trendline/shared/components/components/components.dart';
 
 import '../../models/ProductModel.dart';
 import '../../shared/components/constants.dart';
@@ -11,9 +12,8 @@ class Description extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Text(" الوصف : ${product.description}",
-        style:defaultTextStyle(),
-      ),
+      child: DefaultText(text:" الوصف : ${product.description}",font_size:18,font:"Cairo" )
+      
     );
   }
 }

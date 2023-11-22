@@ -54,7 +54,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   width: double.infinity,
                   // height: 500,
                   decoration:  BoxDecoration(
-                    color: Colors.grey,
+                    color: Color(0xffE0FBFC),
                     borderRadius:  BorderRadius.circular(24),
                   ),
                   child: Column(
