@@ -10,10 +10,14 @@ class Description extends StatelessWidget {
   final Product product;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: DefaultText(text:" الوصف : ${product.description}",font_size:18,font:"Cairo" )
-      
+    return Row(
+      children: [
+      Text(" الوصف : " ,style: defaultTextStyle(),),
+        Text("${product.description}", style: TextStyle(
+          fontFamily: "Cairo" ,
+          fontSize: 17
+        ),)
+      ],
     );
   }
 }

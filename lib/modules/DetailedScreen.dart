@@ -20,6 +20,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
@@ -51,24 +52,38 @@ class _DetailsScreenState extends State<DetailsScreen> {
               const SizedBox(height: 10,),
               Container(
                   padding: const EdgeInsets.all(20),
-                  width: double.infinity,
+                  width: width,
                   // height: 500,
                   decoration:  BoxDecoration(
-                    color: Color(0xffE0FBFC),
+                    color: Colors.grey[500],
                     borderRadius:  BorderRadius.circular(24),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text("السعر : ${widget.product.price}" , style: defaultTextStyle(),) ,
-                      const SizedBox(height: 8,),
+                      Row(
+
+
+                        children: [
+                          Text("السعر : " , style: defaultTextStyle(),) ,
+                          Text("${widget.product.price}", style: TextStyle(fontFamily: "Cairo" ,
+                              fontSize: 17),)
+
+                        ],
+                      ),
+                      const SizedBox(height: 5,),
                       SizeOfProduct(product: widget.product,),
                       const SizedBox(height: 8,),
                       AvailableColors(product: widget.product,),
                       const SizedBox(height: 8,),
-                      Description(product: widget.product,),
-                    ],
+                    Row(
+                      children: [
+                        Description(product: widget.product,),
+
+                      ],
+                    ),
+                    const SizedBox(height: 20,)],
+
                   )),
             ],
           ),

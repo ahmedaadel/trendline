@@ -41,7 +41,6 @@ class SizeOfProduct extends StatelessWidget {
                     child: Center(
                       child: Text(
                         product.sizeName(product.sizes[index]),
-                        style: defaultTextStyle(),
                       ),
                     ),
                   ),
